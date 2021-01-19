@@ -45,6 +45,7 @@ class Boid {
         total++;
       }
     }
+
     if (total == 0) return;
     
     target.div(total);
@@ -92,6 +93,10 @@ class Boid {
     force.limit(maxForce);
     force.mult(aCoef);
     acc.add(force);
+  }
+  void colision(){
+    PVector target = new PVector();
+    
   }
   
   void wrap() {

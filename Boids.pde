@@ -12,11 +12,11 @@ Boid[] boids;
 PShape boidShape;
 
 void setup() {
-  // size(1280, 720);
-  fullScreen();
+  size(1280, 920);
+
   frameRate(60);
   
-  n = 200;
+  n = 300;
   aCoef = 0.3;
   sCoef = 0.5;
   cCoef = 0.5;
@@ -31,7 +31,7 @@ void setup() {
     boids[i] = new Boid(new PVector(random(0, width), random(0, height)), PVector.random2D());
   }
   
-  float shapeSize = 3;
+  float shapeSize = 4;
   boidShape = createShape();
   boidShape.beginShape();
   boidShape.strokeWeight(1.5);

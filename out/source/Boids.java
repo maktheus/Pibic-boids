@@ -28,11 +28,11 @@ Boid[] boids;
 PShape boidShape;
 
 public void setup() {
-  // size(1280, 720);
   
+
   frameRate(60);
   
-  n = 200;
+  n = 300;
   aCoef = 0.3f;
   sCoef = 0.5f;
   cCoef = 0.5f;
@@ -47,7 +47,7 @@ public void setup() {
     boids[i] = new Boid(new PVector(random(0, width), random(0, height)), PVector.random2D());
   }
   
-  float shapeSize = 3;
+  float shapeSize = 4;
   boidShape = createShape();
   boidShape.beginShape();
   boidShape.strokeWeight(1.5f);
@@ -106,6 +106,7 @@ class Boid {
         total++;
       }
     }
+
     if (total == 0) return;
     
     target.div(total);
@@ -154,6 +155,9 @@ class Boid {
     force.mult(aCoef);
     acc.add(force);
   }
+  public void colision(){
+    
+  }
   
   public void wrap() {
     if (pos.x < 0) { pos.x = width; }
@@ -181,7 +185,7 @@ public void draw() {
     b.display();
   }
 }
-  public void settings() {  fullScreen(); }
+  public void settings() {  size(1280, 920); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Boids" };
     if (passedArgs != null) {
